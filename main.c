@@ -1,25 +1,25 @@
 #include "function.h"
-
 int main() {
     SetConsoleOutputCP(CP_UTF8);
+    int choice;
+
     while (1) {
-        printf("\nВыберите задание лабораторной работы №5:\n");
-        printf("0 - Завершить программу\n");
-        printf("1 - Первое задание (минимальный нечетный элемент стека)\n");
-        printf("2 - Второе задание (слияние двух стеков)\n");
-        printf("Введите номер задания: ");
-        int choice;
-        if (!inputInt("", &choice, 0, 2)) continue;
-        if (choice == 0) {
-            printf("Завершение программы.\n");
-            break;
-        } else if (choice == 1) {
-            minStackel();
-        } else if (choice == 2) {
-            combinationStack();
-        } else {
-            printf("Неверный выбор. Попробуйте снова.\n");
+        printf("\nВыберите задание:\n");
+        printf("0 - Выход\n");
+        printf("1 - Найти минимальный нечетный элемент стека\n");
+        printf("2 - Объединение двух стеков в отсортированный\n");
+        printf("Выбор: ");
+
+        if (!inputInt("", &choice, 0, 2)) {
+            printf("Ошибка ввода!\n");
+            continue;
+        }
+
+        switch (choice) {
+            case 0: return 0;
+            case 1: minStackel(); break;
+            case 2: combinationStack(); break;
+            default: printf("Неверный выбор!\n");
         }
     }
-    return 0;
 }

@@ -5,4 +5,5 @@ set(CMAKE_C_STANDARD 23)
 
 add_executable(LABA5_2sem main.c
         function.c
-        function.h)
+        function.h
+        function.c)
